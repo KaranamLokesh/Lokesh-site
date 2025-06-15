@@ -1,6 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-
 export function Skills() {
   const skillCategories = [
     {
@@ -27,22 +24,6 @@ export function Skills() {
       title: "Big Data & Processing",
       skills: ["Apache Spark", "PySpark", "Snowpark", "Hadoop"],
     },
-    {
-      title: "Machine Learning",
-      skills: ["PyTorch", "Keras", "Langchain", "RAG", "Vector Search"],
-    },
-    {
-      title: "Generative AI",
-      skills: ["Large Language Models", "Generative AI", "RAG Applications"],
-    },
-    {
-      title: "Development Tools",
-      skills: ["Git", "VSCode", "PyCharm", "IntelliJ", "Jupyter Notebook", "Streamlit"],
-    },
-    {
-      title: "Systems & Testing",
-      skills: ["Linux", "MacOS", "Windows", "PowerShell", "MATLAB", "Mockito"],
-    },
   ]
 
   return (
@@ -51,22 +32,20 @@ export function Skills() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="text-xl">{category.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
+              <div key={index} className="card">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary">
+                      <span key={skillIndex} className="badge badge-secondary">
                         {skill}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>

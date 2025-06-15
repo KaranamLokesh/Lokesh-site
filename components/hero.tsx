@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { ArrowDown, Github, Linkedin, Mail, Globe } from "lucide-react"
 import Link from "next/link"
 
@@ -19,12 +18,12 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" asChild>
-              <Link href="#projects">View My Work</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="#contact">Get In Touch</Link>
-            </Button>
+            <Link href="#projects" className="btn btn-primary btn-lg">
+              View My Work
+            </Link>
+            <Link href="#contact" className="btn btn-outline btn-lg">
+              Get In Touch
+            </Link>
           </div>
 
           <div className="flex justify-center space-x-6 mb-12">

@@ -1,21 +1,17 @@
-import { Card, CardContent } from "@/components/ui/card"
-
 export function About() {
   return (
-    <section id="about" className="py-20 bg-muted/50">
+    <section id="about" className="py-20 bg-muted">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">About Me</h2>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
-                    <div className="text-6xl">👨‍💻</div>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="card p-6">
+                <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg flex items-center justify-center">
+                  <div className="text-6xl">👨‍💻</div>
+                </div>
+              </div>
             </div>
 
             <div className="space-y-6">

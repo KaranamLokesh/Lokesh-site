@@ -3,11 +3,6 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import { Mail, MapPin, Phone, Globe } from "lucide-react"
 
 export function Contact() {
@@ -19,9 +14,7 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Handle form submission here
     console.log("Form submitted:", formData)
-    // Reset form
     setFormData({ name: "", email: "", message: "" })
   }
 
@@ -66,45 +59,61 @@ export function Contact() {
               </div>
             </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
-                <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
-              </CardHeader>
-              <CardContent>
+            <div className="card">
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Send a Message</h3>
+                <p className="text-muted-foreground mb-6">
+                  Fill out the form below and I'll get back to you as soon as possible.
+                </p>
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
+                    <label htmlFor="name" className="label block mb-2">
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="input"
+                    />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input
+                    <label htmlFor="email" className="label block mb-2">
+                      Email
+                    </label>
+                    <input
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      className="input"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
+                    <label htmlFor="message" className="label block mb-2">
+                      Message
+                    </label>
+                    <textarea
                       id="message"
                       name="message"
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      className="textarea"
                     />
                   </div>
-                  <Button type="submit" className="w-full">
+                  <button type="submit" className="btn btn-primary w-full">
                     Send Message
-                  </Button>
+                  </button>
                 </form>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
